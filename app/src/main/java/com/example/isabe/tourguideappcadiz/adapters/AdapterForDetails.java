@@ -1,4 +1,4 @@
-package com.example.isabe.tourguideappcadiz;
+package com.example.isabe.tourguideappcadiz.adapters;
 
 import android.app.Activity;
 import android.support.annotation.NonNull;
@@ -10,23 +10,26 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.isabe.tourguideappcadiz.R;
+import com.example.isabe.tourguideappcadiz.TourSite;
+import com.example.isabe.tourguideappcadiz.TourSitesAdapter;
+
 import java.util.ArrayList;
 
 import butterknife.BindView;
 
-/**
- * Created by WWW on 07/05/2017.
- */
-
-public class TourSitesAdapter extends ArrayAdapter<TourSite> {
+public class AdapterForDetails extends ArrayAdapter<TourSite> {
 
     private static final String SITE = TourSitesAdapter.class.getSimpleName();
     private int mColorResourceId;
     private String mDetailedInfo;
 
-    public TourSitesAdapter(Activity context, ArrayList<TourSite> tourSites, int colorResourceId) {
+    @BindView(R.id.tv_detailed_info)
+    TextView mInfoTextView;
+
+    public AdapterForDetails(Activity context, ArrayList<TourSite> tourSites, String detailedInfo) {
         super(context, 0, tourSites);
-        mColorResourceId = colorResourceId;
+        mDetailedInfo = detailedInfo;
     }
 
     @NonNull
@@ -36,24 +39,18 @@ public class TourSitesAdapter extends ArrayAdapter<TourSite> {
         View listItemView = convertView;
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.list_item, parent, false);
+                    R.layout.fragment_places_detail, parent, false);
         }
 
         TourSite currentTourSite = getItem(position);
         TextView tvText = (TextView) listItemView.findViewById(R.id.tv_text);
         tvText.setText(currentTourSite.gettText());
 
-        TextView tvDescr = (TextView) listItemView.findViewById(R.id.tv_description);
-        tvDescr.setText(currentTourSite.gettDescription());
-
         ImageView iconView = (ImageView) listItemView.findViewById(R.id.image);
         iconView.setImageResource(currentTourSite.getImageResourceID());
 
-        View textContainer = listItemView.findViewById(R.id.text_container);
-        int color = ContextCompat.getColor(getContext(), mColorResourceId);
-        textContainer.setBackgroundColor(color);
+        mInfoTextView.setText(currentTourSite.getmDetailedInfo());
 
         return listItemView;
     }
 }
-

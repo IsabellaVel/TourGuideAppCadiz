@@ -4,4 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="list_item_height">88dp</dimen>
     <dimen name="elevation_app_bar">8dp</dimen>
+    <dimen name="dimen_margin_general">15dp</dimen>
+    <dimen name="text_description">14sp</dimen>
 </resources>

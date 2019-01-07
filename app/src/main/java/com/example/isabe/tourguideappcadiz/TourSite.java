@@ -11,11 +11,13 @@ public class TourSite implements Parcelable{
     private String tText;
     private String tDescription;
     private int mImageResourceID;
+    private String mDetailedInfo;
 
-    public TourSite(String siteDescription, String backgroundDetails, int imageResourceID) {
+    public TourSite(String siteDescription, String backgroundDetails, int imageResourceID, String detailedInfo) {
         tText = siteDescription;
         tDescription = backgroundDetails;
         mImageResourceID = imageResourceID;
+        mDetailedInfo = detailedInfo;
     }
 
     public TourSite(String siteDescription, String backgroundDetails) {
@@ -27,6 +29,7 @@ public class TourSite implements Parcelable{
         tText = in.readString();
         tDescription = in.readString();
         mImageResourceID = in.readInt();
+        mDetailedInfo = in.readString();
     }
 
     public static final Creator<TourSite> CREATOR = new Creator<TourSite>() {
@@ -52,6 +55,7 @@ public class TourSite implements Parcelable{
     public int getImageResourceID() {
         return mImageResourceID;
     }
+    public String getmDetailedInfo(){ return mDetailedInfo;}
 
     @Override
     public int describeContents() {
@@ -63,5 +67,6 @@ public class TourSite implements Parcelable{
         dest.writeString(tText);
         dest.writeString(tDescription);
         dest.writeInt(mImageResourceID);
+        dest.writeString(mDetailedInfo);
     }
 }

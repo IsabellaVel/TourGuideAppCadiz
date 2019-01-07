@@ -13,12 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.isabe.tourguideappcadiz;
+package com.example.isabe.tourguideappcadiz.adapters;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import com.example.isabe.tourguideappcadiz.categories.EventsFragment;
+import com.example.isabe.tourguideappcadiz.categories.PlacesFragment;
+import com.example.isabe.tourguideappcadiz.R;
+import com.example.isabe.tourguideappcadiz.categories.RestaurantsFragment;
+import com.example.isabe.tourguideappcadiz.categories.ShoppingFragment;
 
 /**
  * Provides the appropriate {@link Fragment} for a view pager.

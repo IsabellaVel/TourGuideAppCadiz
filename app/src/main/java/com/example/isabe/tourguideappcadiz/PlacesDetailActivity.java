@@ -6,6 +6,8 @@ import android.os.Parcelable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
+import com.example.isabe.tourguideappcadiz.categories.PlacesFragment;
+
 /**
  * Created by isabe on 1/5/2019.
  */
