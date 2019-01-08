@@ -33,7 +33,7 @@ public class PlacesDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_place_detail);
 
-        android.support.v7.widget.Toolbar mToolBar = findViewById(R.id.toolbar);
+        android.support.v7.widget.Toolbar mToolBar = findViewById(R.id.toolbar_details);
         setSupportActionBar(mToolBar);
 
       ActionBar actionBar = getSupportActionBar();

@@ -6,4 +6,5 @@
     <dimen name="elevation_app_bar">8dp</dimen>
     <dimen name="dimen_margin_general">15dp</dimen>
     <dimen name="text_description">14sp</dimen>
+    <dimen name="title_size">24sp</dimen>
 </resources>
