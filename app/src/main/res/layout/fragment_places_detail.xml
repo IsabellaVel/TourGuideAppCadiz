@@ -5,21 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/detail_bckgr"
+    android:id="@+id/linear_layout"
     android:orientation="vertical"
     >
 
     <android.support.v7.widget.CardView
+        android:id="@+id/card_id"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:background="@color/detail_bckgr"
         >
 
         <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:id="@+id/constraint_layout"
             android:background="@color/detail_bckgr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_vertical"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             >
@@ -41,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dimen_margin_general"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/tv_detailed_info"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/place_title"
@@ -59,7 +62,7 @@
                 android:textSize="@dimen/text_description"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/place_image"
-                app:layout_constraintVertical_bias="0.5" />
+                app:layout_constraintVertical_bias="1" />
 
 
         </android.support.constraint.ConstraintLayout>
@@ -67,3 +70,4 @@
     </android.support.v7.widget.CardView>
 
 </LinearLayout>
+

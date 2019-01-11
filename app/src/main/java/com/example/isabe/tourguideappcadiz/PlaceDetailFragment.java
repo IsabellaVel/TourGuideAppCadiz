@@ -57,8 +57,7 @@ public class PlaceDetailFragment extends Fragment {
         CollapsingToolbarLayout collapsingToolbarLayout = activity.findViewById(R.id.collapsing_toolbar_layout);
         if (collapsingToolbarLayout != null) {
             collapsingToolbarLayout.setTitleEnabled(false);
-            collapsingToolbarLayout.setTitle(mTitle);
-        }
+            }
     }
 
     @Override
