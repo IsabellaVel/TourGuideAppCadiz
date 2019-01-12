@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +26,7 @@ import butterknife.Unbinder;
  */
 
 public class PlaceDetailFragment extends Fragment {
+    private static final String LOG_TAG = PlaceDetailFragment.class.getSimpleName();
     private AdapterForDetails mAdapterForPlaceInfo;
     public TourSite mTourSite;
 
@@ -62,7 +65,7 @@ public class PlaceDetailFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context = getActivity();
 
@@ -70,6 +73,19 @@ public class PlaceDetailFragment extends Fragment {
         unbinder = ButterKnife.bind(this, rootView);
 
         setUpDetailsForPlace();
+
+        if (savedInstanceState != null){
+            final CollapsingToolbarLayout collapsingToolbarLayout = getActivity().findViewById(R.id.collapsing_toolbar_layout);
+
+            collapsingToolbarLayout.post(new Runnable() {
+                @Override
+                public void run() {
+                    collapsingToolbarLayout.setTitleEnabled(false);
+                    Log.i(LOG_TAG, "Restored title is " + savedInstanceState.getString("title"));
+                }
+            });
+
+        }
         return rootView;
     }
 
@@ -78,6 +94,13 @@ public class PlaceDetailFragment extends Fragment {
         mPlaceImage.setImageResource(mImage);
         mPlaceInfo.setText(mInfo);
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){
+        mTitle = mTourSite.gettText();
+        savedInstanceState.putString("title", mTitle);
+        Log.i(LOG_TAG, "Saves title is " + mTitle);
+        }
 
 
 }

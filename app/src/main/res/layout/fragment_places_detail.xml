@@ -12,7 +12,7 @@
     <android.support.v7.widget.CardView
         android:id="@+id/card_id"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:focusable="true"
         android:focusableInTouchMode="true"
         >
@@ -21,7 +21,7 @@
             android:id="@+id/constraint_layout"
             android:background="@color/detail_bckgr"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="fill_vertical"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

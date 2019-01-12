@@ -58,7 +58,7 @@ public class PlacesDetailActivity extends AppCompatActivity {
      **/
       if (savedInstanceState != null){
           mPlacePOJO = savedInstanceState.getParcelable(PlacesFragment.PLACE_SELECTION);
-          }
+      }
           else {
           mPlacePOJO = getIntent().getParcelableExtra(PlacesFragment.PLACE_SELECTION);
           String placeDescription = mPlacePOJO.gettDescription();

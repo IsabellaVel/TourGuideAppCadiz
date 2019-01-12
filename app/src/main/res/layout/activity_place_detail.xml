@@ -20,9 +20,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:contentScrim="?attr/colorPrimary"
+            android:fitsSystemWindows="true"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             >
-
+            
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar_details"
                 android:layout_width="match_parent"
@@ -38,7 +39,7 @@
         android:id="@+id/place_detail_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="fill_vertical"
+        android:fillViewport="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         >
 
